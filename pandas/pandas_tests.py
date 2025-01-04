@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from numpy.random import randn
 
 # labels = ['a', 'b', 'c']
 # my_data = [10, 20, 30]
@@ -8,5 +9,11 @@ import pandas as pd
 
 # print(pd.Series(data = my_data, index=labels))
 
-ser1 = pd.Series([1,2,3,4], ['USA', 'Germany', 'USSR', 'Japan'])
-ser2 = pd.Series([1,2,5,4], ['USA', 'Germany', 'Italy', 'Japan'])
+# ser1 = pd.Series([1,2,3,4], ['USA', 'Germany', 'USSR', 'Japan'])
+# ser2 = pd.Series([1,2,5,4], ['USA', 'Germany', 'Italy', 'Japan'])
+
+np.random.seed(101)
+df = pd.DataFrame(randn(5, 4), ['A', 'B', 'C', 'D', 'E'], ['W', 'X', 'Y', 'Z'])
+df['New'] = df['W'] + df['Y']
+#df.loc for rows, and df['Name'] for cols
+print(df.loc['A'])
