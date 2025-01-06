@@ -16,4 +16,10 @@ np.random.seed(101)
 df = pd.DataFrame(randn(5, 4), ['A', 'B', 'C', 'D', 'E'], ['W', 'X', 'Y', 'Z'])
 df['New'] = df['W'] + df['Y']
 #df.loc for rows, and df['Name'] for cols
-print(df.loc['A'])
+# print(df.loc['A'])
+# print(df[df > 0])
+
+boolser = df['W'] > 0
+result = df[boolser]
+
+print(df[(df['W'] > 0) & (df['Y'] > 1)])
